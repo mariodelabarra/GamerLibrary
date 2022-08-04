@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  sql-server:
+    container_name: sql-server-db
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    environment:
+        SA_PASSWORD: "Welcome123!"
+        ACCEPT_EULA: "Y"
+        SSQL_PID: Express
+    ports: 
+      - 1433:1433
+    volumes:
+      - ../databases/sql-data:/data/db
